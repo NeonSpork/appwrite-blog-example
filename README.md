@@ -40,9 +40,9 @@ In the Bloggers team overview, add your user to the members.
 - Click `Add Collection` and call it **blog-posts**  
   - NOTE: You _can_ call it something else. But if you do, make sure you _also_ update the `.listDocument()` API call in `src/app/pages/home/home.component.ts` accordingly!
 - In the collection settings you need to add 3 rules:
-  - Label: author / Key: name / Rule Type: Text / Required: True
-  - Label: title / Key: title_text / Rule Type: Text / Required: True
-  - Label: body / Key: body_text / Rule Type: **Markdown** / Required: True
+  1. Label: author / Key: name / Rule Type: Text / Required: True
+  2. Label: title / Key: title_text / Rule Type: Text / Required: True
+  3. Label: body / Key: body_text / Rule Type: **Markdown** / Required: True
   - Note that all these rules are set to Required, and especially important is that the third rule for the blog body is of type Markdown.
 - You also need to add Permissions:
   - Read Access: `*` (everyone should be able to _read_ the blog)
