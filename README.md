@@ -28,23 +28,23 @@ In the console page for your project go the the Users page and Add User for your
 Go to Users - Teams and hit `Add Team`. Let's call it "Bloggers" for now.  
 
 In the Bloggers team overview, add your user to the members.
-1. Hit `Add Member`
-2. Fill in the email you used for your user
-3. Add a user name
-4. Under roles _**remove**_ `owner` and _**add**_ `blogger`
+- Hit `Add Member`
+- Fill in the email you used for your user
+- Add a user name
+- Under roles _**remove**_ `owner` and _**add**_ `blogger`
 
 **NOTE! The role is important for later so don't forget.**
 
 ### Create a "blog-post" document collection in the project
-1. Head to the `Database` page in your project
-2. Click `Add Collection` and call it **blog-posts**
+- Head to the `Database` page in your project
+- Click `Add Collection` and call it **blog-posts**  
   - NOTE: You _can_ call it something else. But if you do, make sure you _also_ update the `.listDocument()` API call in `src/app/pages/home/home.component.ts` accordingly!
-3. In the collection settings you need to add 3 rules:
+- In the collection settings you need to add 3 rules:
   - Label: author / Key: name / Rule Type: Text / Required: True
   - Label: title / Key: title_text / Rule Type: Text / Required: True
   - Label: body / Key: body_text / Rule Type: **Markdown** / Required: True
   - Note that all these rules are set to Required, and especially important is that the third rule for the blog body is of type Markdown.
-4. You also need to add Permissions:
+- You also need to add Permissions:
   - Read Access: `*` (everyone should be able to _read_ the blog)
   - Write Access: Set this to the `blogger` role we created earlier!
 
