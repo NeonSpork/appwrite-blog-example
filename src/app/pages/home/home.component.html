@@ -1,3 +1,12 @@
 <div *ngFor="let blog of blog_posts.documents">
-    {{blog.name}}
+  <mat-card>
+    <mat-card-title>
+      {{blog.title_text}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      Author: {{blog.name}}
+    </mat-card-subtitle>
+    <br>
+      {{blog.body_text}}
+  </mat-card>
 </div>
