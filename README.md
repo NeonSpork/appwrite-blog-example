@@ -37,8 +37,8 @@ In the Bloggers team overview, add your user to the members.
 
 ### Create a "blog-post" document collection in the project
 - Head to the `Database` page in your project
-- Click `Add Collection` and call it **blog-posts**  
-  - NOTE: You _can_ call it something else. But if you do, make sure you _also_ update the `.listDocument()` API call in `src/app/pages/home/home.component.ts` accordingly!
+- Click `Add Collection` and call it "blog-posts" or something similar  
+  - NOTE: You update the `.listDocument()` API call in `src/app/pages/home/home.component.ts` with the **collection ID** (this is a number) not the _name_!
 - In the collection settings you need to add 3 rules:
   1. Label: author / Key: name / Rule Type: Text / Required: True
   2. Label: title / Key: title_text / Rule Type: Text / Required: True
