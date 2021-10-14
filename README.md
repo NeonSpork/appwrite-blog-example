@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
+Learn with me! I made this blog example to familiarize myself with the Appwrite API. Follow along with my steps below to recreate this yourself!
+
 ## Step by step process
 ### Install all the angular stuff with node package manager
 Clone this repository. In the terminal, navigate to the repository root and run:  
