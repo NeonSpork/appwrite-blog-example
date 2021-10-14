@@ -7,8 +7,8 @@ export interface IBlogPost {
       read: Array<string>
       write: Array<string>
     }
-    name: string
-    title_text: string
-    body_text: string
+    author: string
+    title: string
+    body: string
   }>
 }
