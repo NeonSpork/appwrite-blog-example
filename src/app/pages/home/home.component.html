@@ -1,12 +1,11 @@
-<div *ngFor="let blog of blog_posts.documents">
+<div *ngFor="let blog of blog_posts.documents | reverse">
   <mat-card>
     <mat-card-title>
-      {{blog.title_text}}
+      {{blog.title}}
     </mat-card-title>
     <mat-card-subtitle>
-      Author: {{blog.name}}
+      Author: {{blog.author}}
     </mat-card-subtitle>
-    <br>
-      {{blog.body_text}}
+      <markdown>{{blog.body}}</markdown>
   </mat-card>
 </div>

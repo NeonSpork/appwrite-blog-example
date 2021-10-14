@@ -20,9 +20,9 @@ export class HomeComponent implements OnInit {
         read: [''],
         write: ['']
       },
-      name: '',
-      title_text: '',
-      body_text: ''
+      author: '',
+      title: '',
+      body: ''
     }]
   };
 
