@@ -1,1 +1,19 @@
+<mat-toolbar>
+  <img class="logo-fit" src="assets/built-with-appwrite.svg">
+  <span class="spacer"></span>
+  <span>Angular Appwrite Blog Example</span>
+  <span class="spacer"></span>
+  <button mat-icon-button aria-label="Sign in button" [routerLink]="['admin']">
+    <mat-icon>login</mat-icon>
+  </button>
+</mat-toolbar>
 <router-outlet></router-outlet>
+<div class="footer-div">
+  <span class="spacer"></span>
+  <span>
+    <a class="centered-bottom" href="https://appwrite.io" target="_blank">
+      <img class="footer-badge shadow" src="assets/built-with-appwrite_wide_badge.svg">
+    </a>
+  </span>
+  <span class="spacer"></span>
+</div>

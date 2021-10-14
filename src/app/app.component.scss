@@ -1,0 +1,32 @@
+.mat-toolbar {
+  background-color: #f02e65;
+}
+
+.logo-fit {
+  max-height: 90%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.footer-div {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  height: 5%;
+  min-height: 50px;
+  width: 100%;
+}
+
+.shadow {
+  border-radius: 5px;
+  box-shadow: #f02e65 0px 0px 12px 0px;
+}
+
+.footer-badge {
+  height: 100%;
+  min-height: 30px;
+  max-height: 50px;
+  width: auto;
+}
