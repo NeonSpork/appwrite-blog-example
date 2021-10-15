@@ -1,9 +1,12 @@
 .mat-toolbar {
   background-color: #f02e65;
+  font-family: Poppins;
 }
 
 .logo-fit {
-  max-height: 90%;
+  height: 5vh;
+  min-height: 45px;
+  margin-top: 1vh;
 }
 
 .spacer {
