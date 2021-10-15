@@ -1,25 +1,19 @@
-    <p>TESTY TESTTSSS</p>
-    <mat-form-field appearance="standard" (ngSubmit)="handleLogin()">
-      <label class="block mt-6"> Email</label>
-      <input
-        class="w-full p-4 placeholder-gray-400 text-gray-700 bg-white text-lg border-0 border-b-2 border-gray-400 focus:ring-0 focus:border-gray-900"
-        type="text"
-        formControlName="email"
-      />
-      <label class="block mt-6"> Password</label>
-      <input
-        class="w-full p-4 placeholder-gray-400 text-gray-700 bg-white text-lg border-0 border-b-2 border-gray-400 focus:ring-0 focus:border-gray-900"
-        type="password"
-        formControlName="password"
-      />
-
-      <div class="mt-6">
-        <button
-          [disabled]="loginForm.invalid"
-          type="submit"
-          class="mx-auto mt-4 py-4 px-16 font-semibold rounded-lg shadow-md bg-gray-900 text-white border hover:border-gray-900 hover:text-gray-900 hover:bg-white focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          Login
-        </button>
-      </div>
+<div class="center-flex">
+  <mat-label>Sign in to the admin page</mat-label>
+  <div [formGroup]="loginFormGroup" class="flex-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="example@email.com" type="text" formControlName="email" />
+      <mat-icon matSuffix style="color:#f02e65;">email</mat-icon>
+      <!-- <mat-hint>Enter your email</mat-hint> -->
     </mat-form-field>
+  </div>
+  <div [formGroup]="loginFormGroup" class="flex-form">
+    <mat-form-field appearance="fill" class="flex-form">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="password" type="text" formControlName="password" />
+      <mat-icon matSuffix style="color:#f02e65;">lock</mat-icon>
+      <!-- <mat-hint>Enter your email</mat-hint> -->
+    </mat-form-field>
+  </div>
+</div>
