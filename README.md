@@ -2,7 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
-Learn with me! I made this blog example to familiarize myself with the Appwrite API. Follow along with my steps below to recreate this yourself!
+I made this blog example to familiarize myself with the Appwrite API. Follow along with my steps below to recreate this yourself!
+
+
 
 ## Step by step process
 ### Install all the angular stuff with node package manager
@@ -43,9 +45,9 @@ In the Bloggers team overview, add your user to the members.
   1. Label: author / Key: author / Rule Type: Text / Required: True
   2. Label: title / Key: title / Rule Type: Text / Required: True
   3. Label: body / Key: body / Rule Type: Text / Required: True
-  - Note that all these rules are set to Required, and especially important is that the third rule for the blog body is of type Markdown.
+  - Note that all these rules are set to Required. In the body of the blogpost you can use markdown and/or HTML.
 - You also need to add Permissions:
-  - Read Access: `*` (everyone should be able to _read_ the blog)
+  - Read Access: `*` (everyone should be able to _read_ the blog, but this will need to be behind some layer of safety if this were to be hosted or published anywhere but localhost)
   - Write Access: Set this to the `blogger` role we created earlier!
 
 ### Launch a local version of the `appwrite-blog-example`
