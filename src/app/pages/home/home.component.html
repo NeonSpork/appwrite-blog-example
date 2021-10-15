@@ -1,3 +1,9 @@
+<div class="container">
+  Sign in to blog!
+  <button mat-icon-button class="login-button" aria-label="Sign in button" [routerLink]="['admin']">
+    <mat-icon>login</mat-icon>
+  </button>
+</div>
 <div *ngFor="let blog of blog_posts.documents | reverse">
   <mat-card>
     <mat-card-title>
