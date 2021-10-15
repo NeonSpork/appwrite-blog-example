@@ -1,19 +1,28 @@
 <div class="center-flex">
-  <mat-label>Sign in to the admin page</mat-label>
+  <div class="flex-form">
+    <mat-label>Ready to blog some blogs?</mat-label>
+  </div>
   <div [formGroup]="loginFormGroup" class="flex-form">
     <mat-form-field appearance="fill">
       <mat-label>Email</mat-label>
-      <input matInput placeholder="example@email.com" type="text" formControlName="email" />
+      <input matInput placeholder="example@email.com" type="text" formControlName="email" (onSubmit)="handleLogin()"/>
       <mat-icon matSuffix style="color:#f02e65;">email</mat-icon>
-      <!-- <mat-hint>Enter your email</mat-hint> -->
     </mat-form-field>
   </div>
   <div [formGroup]="loginFormGroup" class="flex-form">
     <mat-form-field appearance="fill" class="flex-form">
       <mat-label>Password</mat-label>
-      <input matInput placeholder="password" type="text" formControlName="password" />
+      <input matInput placeholder="password" type="password" formControlName="password" (onSubmit)="handleLogin()" />
       <mat-icon matSuffix style="color:#f02e65;">lock</mat-icon>
-      <!-- <mat-hint>Enter your email</mat-hint> -->
     </mat-form-field>
+  </div>
+  <div [formGroup]="loginFormGroup" class="flex-form">
+    Sign in
+    <button mat-icon-button class="login-button" aria-label="Sign in button" (onClick)="handleLogin()">
+      <mat-icon>login</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="loginFailure">
+    Incorrect email or password!
   </div>
 </div>

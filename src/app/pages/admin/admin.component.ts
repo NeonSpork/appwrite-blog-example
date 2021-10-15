@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatFormFieldControl } from '@angular/material/form-field';
+import { AppwriteService } from 'src/app/shared/appwrite.service';
 // import { Store } from '@ngxs/store';
 
 @Component({
@@ -11,8 +11,9 @@ import { MatFormFieldControl } from '@angular/material/form-field';
 export class AdminComponent implements OnInit {
 
   loginFormGroup: FormGroup;
+  loginFailure: Boolean | null = null;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private aws: AppwriteService) {
     this.loginFormGroup = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
@@ -20,15 +21,16 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.loginForm.updateValueAndValidity()
+    this.loginFormGroup.updateValueAndValidity()
   }
 
-  // handleLogin() {
-  //   console.log("Logging in", this.loginForm.value);
-  //   let payload = {
-  //     email : this.loginForm.value.email,
-  //     password: this.loginForm.value.password
-  //   }
-  //   // this.store.dispatch(new Account.Login(payload))
-  // }
+  handleLogin() {
+    this.aws.appwrite.account.createSession(this.loginFormGroup.get('email')?.value, this.loginFormGroup.get('password')?.value).then(
+      (response) => {
+        console.log("Success?");
+      }, (error) => {
+        console.log("FAILURE.");
+      }
+    )
+  }
 }

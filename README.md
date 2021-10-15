@@ -19,7 +19,7 @@ Follow the [installation instructions](https://appwrite.io/docs/installation) fo
 Once you've installed Appwrite, go ahead and head to the [console](http://localhost/console).  
 _Heads up: you'll need to create a user the first time you do this!_  
 
-Once you're in, create a project and copy the project ID into `src/app/shared/blog-post.service.ts` into the `setProject('PROJECT_ID')` line in the constructor.
+Once you're in, create a project and copy the project ID into `src/app/shared/appwrite.service.ts` into the `setProject('PROJECT_ID')` line in the constructor.
 
 ### Create a user for yourself in the Appwrite project
 This user will be the "admin" and will have access to the page where you can create and manage blog posts.  
