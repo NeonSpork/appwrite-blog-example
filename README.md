@@ -8,15 +8,13 @@ I made this blog example to familiarize myself with the Appwrite API. Follow alo
 
 ## Step by step process
 ### Install all the angular stuff with node package manager
-Clone this repository. In the terminal, navigate to the repository root and run:  
-`npm i`  
-and node package manager will handle everything automagically.
+Clone this repository. In the terminal, navigate to the repository root and run `npm install` (or `npm i` if you're lazy!) and node package manager will handle everything automagically.
 
 ### Install appwrite
 Follow the [installation instructions](https://appwrite.io/docs/installation) for Appwrite, and run it locally for now.
 
 ### Create a project in Appwrite
-Once you've installed Appwrite, go ahead and head to the [console](http://localhost/console).  
+Once you've installed Appwrite, go ahead and head to the console at [http://localhost/console](http://localhost/console).  
 _Heads up: you'll need to create a user the first time you do this!_  
 
 Once you're in, create a project and copy the project ID into `src/app/shared/appwrite.service.ts` into the `setProject('PROJECT_ID')` line in the constructor.
@@ -57,4 +55,4 @@ In a terminal in the root folder of the repository run `npx ng serve`.
 In a browser, open `http://localhost:4200`, this will automatically forward you to the `/home` page where the blog is!
 
 ### Create a blog post
-Go to `http://localhost:4200/admin`, sign in and fill in the form to make a blogpost! Head on back to `http://localhost:4200/` and read it in all its glory! (Refresh the page if necessary)
+Go to [http://localhost:4200/admin](http://localhost:4200/admin), sign in and fill in the form to make a blogpost! Head on back to [http://localhost:4200/](http://localhost:4200/) and read it in all its glory! (Refresh the page if necessary)
