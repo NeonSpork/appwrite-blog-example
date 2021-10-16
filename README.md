@@ -10,7 +10,9 @@ I made this blog example to familiarize myself with the Appwrite API. Follow alo
 
 ### Install all the angular stuff with node package manager
 
-Clone this repository. In the terminal, navigate to the repository root and run `npm install` (or `npm i` if you're lazy!) and node package manager will handle everything automagically.
+Clone this repository. In the terminal, navigate to the repository root and run  
+`npm install` (or `npm i` if you're lazy!)  
+and node package manager will handle everything automagically.
 
 ### Install appwrite
 
