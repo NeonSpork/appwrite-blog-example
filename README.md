@@ -55,7 +55,8 @@ In the Bloggers team overview, add your user to the members.
   |1|author|author|Text     |True    | 
   |2|title |title |Text     |True    | 
   |3|body  |body  |Text     |True    | 
-  - Note that all these rules are set to Required. In the body of the blogpost you can use markdown and/or HTML.
+  - Note that all these rules are set to Required.
+  - In the body of the blog post you can use markdown and/or HTML.
 - You also need to add Permissions:
   - Read Access: `*` (everyone should be able to _read_ the blog, but this will need to be behind some layer of safety if this were to be hosted or published anywhere but localhost)
   - Write Access: Set this to the `blogger` role we created earlier!
@@ -65,7 +66,7 @@ In the Bloggers team overview, add your user to the members.
 In a terminal in the root folder of the repository run `npx ng serve`.  
 (The `npx` command will ensure you can run this with the locally installed `@angular/cli` rather than requiring a global install)
 
-In a browser, open `http://localhost:4200`, this will automatically forward you to the `/home` page where the blog is!
+In a browser, open [http://localhost:4200/](http://localhost:4200/), this will automatically forward you to the `/home` page where the blog is!
 
 ### Create a blog post
 
