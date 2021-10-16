@@ -1,0 +1,25 @@
+<div class="center-flex">
+  <form>
+    <div class="flex-form">
+      <mat-label>Create a new blog post!</mat-label>
+    </div>
+    <div [formGroup]="postFormGroup" class="flex-form">
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" formControlName="title" (onSubmit)="verifyPost()" />
+      </mat-form-field>
+    </div>
+    <div [formGroup]="postFormGroup" class="flex-form">
+      <mat-form-field appearance="fill" class="flex-form body-form">
+        <mat-label>Body</mat-label>
+        <textarea matInput type="text" formControlName="body" (onSubmit)="verifyPost()"></textarea>
+      </mat-form-field>
+    </div>
+    <div [formGroup]="postFormGroup" class="flex-form">
+      <button mat-flat-button class="publish-button" aria-label="Publish blog post" (click)="verifyPost()">
+        Post that blog post!
+        <mat-icon>satellite_alt</mat-icon>
+      </button>
+    </div>
+  </form>
+</div>
