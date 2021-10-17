@@ -72,4 +72,4 @@ In a browser, open [http://localhost:4200/](http://localhost:4200/), this will a
 
 ### Create a blog post
 
-Go to [http://localhost:4200/admin](http://localhost:4200/admin), sign in and fill in the form to make a blogpost! Head on back to [http://localhost:4200/](http://localhost:4200/) and read it in all its glory! (Refresh the page if necessary)
+Go to [http://localhost:4200/login](http://localhost:4200/login), sign in and fill in the form to make a blogpost! Head on back to [http://localhost:4200/](http://localhost:4200/) and read it in all its glory! (Refresh the page if necessary)
