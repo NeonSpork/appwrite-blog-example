@@ -39,8 +39,7 @@ export class NewPostComponent implements OnInit {
               title: this.postFormGroup.get('title')!.value,
               body: this.postFormGroup.get('body')!.value,
               author: currentUser
-            },
-            ['*'], ['blogger'])
+            });
         }
       );
     }
