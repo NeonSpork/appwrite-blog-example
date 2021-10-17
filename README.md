@@ -59,7 +59,8 @@ In the Bloggers team overview, add your user to the members.
   - In the body of the blog post you can use markdown and/or HTML.
 - You also need to add Permissions:
   - Read Access: `*` (everyone should be able to _read_ the blog, but this will need to be behind some layer of safety if this were to be hosted or published anywhere but localhost)
-  - Write Access: Set this to the `blogger` role we created earlier!
+  - Write Access: Set this to the blogger role we created earlier like this: `role:blogger`!
+    - Note that you can _also_ add the Bloggers team for an extra layer of redundancy like this: `team:Bloggers`
 
 ### Launch a local version of the `appwrite-blog-example`
 
