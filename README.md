@@ -23,7 +23,8 @@ Follow the [installation instructions](https://appwrite.io/docs/installation) fo
 Once you've installed Appwrite, go ahead and head to the console at [http://localhost/console](http://localhost/console).  
 _Heads up: you'll need to create a user the first time you do this!_
 
-Once you're in, create a project and copy the project ID into `src/app/shared/appwrite.service.ts` into the `setProject('PROJECT_ID')` line in the constructor.
+Once you're in, create a project and copy the project ID into `src/app/shared/appwrite.service.ts` into the `setProject('PROJECT_ID')` line in the constructor.  
+It goes without saying that you should **NOT** publish your keys into a repository for an _actual_ deployed app, in that case you should be using GitHub secrets or similar.
 
 ### Create a user for yourself in the Appwrite project
 
