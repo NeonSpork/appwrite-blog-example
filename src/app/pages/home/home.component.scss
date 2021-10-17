@@ -1,10 +1,11 @@
 .mat-card {
   background-color: #29314A;
-  margin: 0 5vw 3vh 5vw;
+  margin: 3vh 5vw 0 5vw;
   border-radius: 15px;
   box-shadow: #f02e65 0px 0px 12px -2px;
   font-family: Poppins;
 }
+
 .container {
   display: flex;
   margin-left: 4vw;
@@ -12,6 +13,7 @@
   justify-content: flex-end;
   align-items: center;
 }
+
 .login-button {
   font-family: Poppins;
 }
