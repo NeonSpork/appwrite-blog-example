@@ -5,6 +5,12 @@
   <span class="spacer"></span>
   <span>Angular Appwrite Blog Example</span>
   <span class="spacer"></span>
+  <span *ngIf="auth.userAuthorized" style="font-size: medium;">
+    Sign out
+    <button mat-icon-button (onClick)="signOut()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </span>
 </mat-toolbar>
 <router-outlet></router-outlet>
 <div class="footer-div">

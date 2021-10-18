@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/shared/auth.service';
 export class LoginComponent implements OnInit {
 
   loginFormGroup: FormGroup;
-  loginFailure: Boolean | null = null;
+  loginFailure: boolean | null = null;
 
   constructor(private formBuilder: FormBuilder,
     private aws: AppwriteService,
@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
           this.loginFailure = false;
           this.auth.userAuthorized = true;
           this.router.navigate(['/new-post']);
+          console.log(this.auth.userAuthorized);
         }, (error) => {
           this.loginFormGroup.reset();
           this.loginFailure = true;

@@ -1,8 +1,10 @@
-<div class="container">
-  Sign in to blog!
-  <button mat-icon-button class="login-button" aria-label="Sign in button" [routerLink]="['/login']">
-    <mat-icon>login</mat-icon>
-  </button>
+<div *ngIf="!auth.userAuthorized">
+  <div class="container">
+    Sign in to blog!
+    <button mat-icon-button class="login-button" aria-label="Sign in button" [routerLink]="['/login']">
+      <mat-icon>login</mat-icon>
+    </button>
+  </div>
 </div>
 <div *ngFor="let blog of blog_posts.documents | reverse">
   <mat-card>

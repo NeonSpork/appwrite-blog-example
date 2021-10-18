@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Router, CanActivate } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  userAuthorized: Boolean;
+  userAuthorized = false;
 
   constructor() {
-    this.userAuthorized = false;
   }
+  
 }

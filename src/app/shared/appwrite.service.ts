@@ -6,6 +6,7 @@ import { Appwrite } from 'appwrite';
 })
 export class AppwriteService {
   appwrite = new Appwrite();
+  loggedIn = false;
 
   constructor() {
     this.appwrite

@@ -40,7 +40,7 @@ export class NewPostComponent implements OnInit {
               body: this.postFormGroup.get('body')!.value,
               author: currentUser
             });
-          this.aws.appwrite.account.deleteSession('current');
+          // this.aws.appwrite.account.deleteSession('current');
           this.router.navigate(['']);
         }
       );
