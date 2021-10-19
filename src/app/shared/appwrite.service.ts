@@ -1,18 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Appwrite } from 'appwrite';
+import * as dotenv from 'dotenv';
+dotenv.config({ path: __dirname + '/.env' });
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppwriteService {
   appwrite = new Appwrite();
-  loggedIn = false;
 
   constructor() {
     this.appwrite
-      .setEndpoint('http://localhost/v1') // Appwrite Endpoint
-      // **********************
-      // FIXME Make sure you put your OWN project ID here!
-      .setProject('6167e645d1969');
-   }
+      .setEndpoint(process.env.APPWRITE_ENDPOINT as string) // Appwrite Endpoint
+      .setProject(process.env.PROJECT_ID as string);
+  }
+
+  authenticate(email: string, password: string): boolean {
+    let authenticated = false;
+    this.appwrite.account.createSession(email, password)
+      .then(
+        (response) => {
+          authenticated = true;
+        }, (error) => {
+          authenticated = false;
+        }
+      )
+    return authenticated;
+  }
 }
