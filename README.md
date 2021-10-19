@@ -23,7 +23,7 @@ Follow the [installation instructions](https://appwrite.io/docs/installation) fo
 Once you've installed Appwrite, go ahead and head to the console at [http://localhost/console](http://localhost/console).  
 _Heads up: you'll need to create a user the first time you do this!_
 
-Once you're in, create a project and copy the project ID and replace `[YOUR_PROJECT_ID]` with your unique project ID.  
+Once you're in, create a project and copy the project ID and replace `[YOUR_PROJECT_ID]` with your unique project ID (the _number_ in single quotes).  
 
 **NOTE! Important that you change the _name_ of the actual file from `.env-EXAMPLE` to just plain old `.env`, otherwise the app will _not_ be able to find your IDs!
 
@@ -50,7 +50,7 @@ In the Bloggers team overview, add your user to the members.
 
 - Head to the `Database` page in your project
 - Click `Add Collection` and call it "blog-posts" or something similar
-  - NOTE: You update the `.listDocument()` API call in `src/app/pages/home/home.component.ts` with the **collection ID** (this is a number) not the _name_!
+  - NOTE: You must update the `.env` setting `[YOUR_COLLECTION_ID]` with the **collection ID** (this is a number) not the _name_!
 - In the collection settings you need to add 3 rules:
   | |Label |Key   |Rule Type|Required|
   |-|------|------|---------|--------|
