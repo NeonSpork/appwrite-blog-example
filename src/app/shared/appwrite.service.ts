@@ -1,30 +1,36 @@
 import { Injectable } from '@angular/core';
 import { Appwrite } from 'appwrite';
-import * as dotenv from 'dotenv';
-dotenv.config({ path: __dirname + '/.env' });
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppwriteService {
   appwrite = new Appwrite();
+  userAuthorized: boolean;
 
   constructor() {
     this.appwrite
-      .setEndpoint(process.env.APPWRITE_ENDPOINT as string) // Appwrite Endpoint
-      .setProject(process.env.PROJECT_ID as string);
+      .setEndpoint(environment.APPWRITE_ENDPOINT) // Appwrite Endpoint
+      .setProject(environment.PROJECT_ID);
+    this.userAuthorized = false;
   }
 
   authenticate(email: string, password: string): boolean {
-    let authenticated = false;
-    this.appwrite.account.createSession(email, password)
+    let payload: any = this.appwrite.account.createSession(email, password)
       .then(
         (response) => {
-          authenticated = true;
+          console.log(response);
         }, (error) => {
-          authenticated = false;
+          console.log(error);
         }
       )
-    return authenticated;
+    if (payload.current != undefined) {
+      this.userAuthorized = payload.current;
+    }
+    else {
+      this.userAuthorized = false;
+    }
+    return this.userAuthorized;
   }
 }

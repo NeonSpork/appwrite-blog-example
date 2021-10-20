@@ -16,5 +16,6 @@ export class AppComponent {
   }
   signOut() {
     this.aws.appwrite.account.deleteSession('current');
+    this.auth.userAuthorized = false;
   }
 }

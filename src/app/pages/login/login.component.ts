@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private aws: AppwriteService,
     private router: Router,
-    private auth: AuthService) {
+    public auth: AuthService) {
     this.loginFormGroup = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
@@ -29,14 +29,16 @@ export class LoginComponent implements OnInit {
   }
 
   handleLogin() {
-    this.loginSuccess = this.aws.authenticate(
+    console.log("starting");
+    let valid = this.aws.authenticate(
       this.loginFormGroup.get('email')?.value,
       this.loginFormGroup.get('password')?.value)
-    if (this.loginSuccess) {
-      this.auth.userAuthorized = true;
+    if (valid) {
+      this.loginSuccess = true;
       this.router.navigate(['/new-post']);
     }
     else {
+      this.loginSuccess = false;
       this.loginFormGroup.reset();
     }
   }
