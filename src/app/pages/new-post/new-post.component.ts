@@ -30,25 +30,25 @@ export class NewPostComponent implements OnInit {
       let confirmation = window.confirm("Are you SURE you want to publish this post?");
       if (confirmation) {
         let currentUser = '';
-      let currentAccount: any;
-      this.aws.appwrite.account.get().then(
-        (account) => {
-          currentAccount = account;
-          currentUser = currentAccount.name;
-          this.aws.appwrite.database.createDocument(environment.COLLECTION_ID,
-            {
-              title: this.postFormGroup.get('title')!.value,
-              body: this.postFormGroup.get('body')!.value,
-              author: currentUser
-            });
-            this.router.navigate(['']);
+        let currentAccount: any;
+        this.aws.appwrite.account.get().then(
+          (account) => {
+            currentAccount = account;
+            currentUser = currentAccount.name;
+            this.aws.appwrite.database.createDocument(environment.COLLECTION_ID,
+              {
+                title: this.postFormGroup.get('title')!.value,
+                body: this.postFormGroup.get('body')!.value,
+                author: currentUser
+              });
+            this.postFormGroup.reset();
           }
-          );
-        }
-      }
-      else {
-        this.router.navigate(['/login']);
+        );
       }
     }
+    else {
+      this.router.navigate(['/login']);
+    }
+  }
 
 }
