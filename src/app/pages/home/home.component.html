@@ -6,7 +6,7 @@
     </button>
   </div>
 </div>
-<div *ngIf="blog_posts.sum > 0 " else noPosts>
+<div *ngIf="blog_posts.sum > 0 else noPosts">
   <div *ngFor="let blog of blog_posts.documents | reverse">
     <mat-card>
       <mat-card-title>
