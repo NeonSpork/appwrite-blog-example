@@ -27,23 +27,16 @@ export class LoginComponent implements OnInit {
   }
 
   handleLogin() {
-    console.log("starting");
     this.aws.appwrite.account.createSession(
       this.loginFormGroup.get('email')?.value,
       this.loginFormGroup.get('password')?.value)
       .then(
         (response: any) => {
-          console.log("good response");
-          console.log(response);
           this.aws.userAuthorized = response.current;
-          console.log(this.aws.userAuthorized);
           this.loginSuccess = true;
           this.router.navigate(['/new-post']);
         }, (error) => {
-          console.log("error response");
-          console.log(error);
           this.aws.userAuthorized = false;
-          console.log(this.aws.userAuthorized);
           this.loginSuccess = false;
           this.loginFormGroup.reset();
         }

@@ -15,7 +15,6 @@ export class AppwriteService {
       .setProject(environment.PROJECT_ID);
     this.appwrite.account.getSession('current').then(
       (response: any) => {
-        console.log(response);
         this.userAuthorized = response.current;
       },
       (error) => {
