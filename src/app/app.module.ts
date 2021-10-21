@@ -17,7 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReversePipe } from './pipes/reverse.pipe';
 import { LoginComponent } from './pages/login/login.component';
 import { NewPostComponent } from './pages/new-post/new-post.component';
-import { AuthService } from './shared/auth.service';
+import { AppwriteService } from './shared/appwrite.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,7 @@ import { AuthService } from './shared/auth.service';
     ReactiveFormsModule,
     MarkdownModule.forRoot()
   ],
-  providers: [AuthService],
+  providers: [AppwriteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

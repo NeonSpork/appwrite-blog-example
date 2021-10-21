@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { IBlogPost } from 'src/app/interfaces';
 import { AppwriteService } from 'src/app/shared/appwrite.service';
-import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -26,8 +25,7 @@ export class HomeComponent implements OnInit {
     }]
   };
 
-  constructor(private aws: AppwriteService,
-    public auth: AuthService) {
+  constructor(public aws: AppwriteService) {
 
   }
 
