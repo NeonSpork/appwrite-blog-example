@@ -24,7 +24,7 @@ Once you've installed Appwrite, go ahead and head to the console at [http://loca
 
 _Heads up: you'll need to create a user the first time you do this!_
 
-Once you're in, create a project and copy the project ID and replace `[YOUR_PROJECT_ID]` in [/src/environment/environment.ts](https://github.com/NeonSpork/appwrite-blog-example/blob/stable/src/environments/environment.ts) with your unique project ID (the _number_ in single quotes).  
+Once you're in, create a project and copy the project ID and replace `PROJECT_ID` in [/src/environment/environment.ts](https://github.com/NeonSpork/appwrite-blog-example/blob/stable/src/environments/environment.ts) with your unique project ID (the _number_ in single quotes).  
 
 ### Create a user for yourself in the Appwrite project
 
@@ -51,7 +51,7 @@ _**NOTE! This role is important for later so don't forget.**_
 
 - Head to the `Database` page in your project
 - Click `Add Collection` and call it "blog-posts" or something similar
-  - NOTE: You must also update `[YOUR_COLLECTION_ID]` in [/src/environment/environment.ts](https://github.com/NeonSpork/appwrite-blog-example/blob/stable/src/environments/environment.ts) with the **collection ID** (this is a number) not the _name_!
+  - NOTE: You must also update `COLLECTION_ID` in [/src/environment/environment.ts](https://github.com/NeonSpork/appwrite-blog-example/blob/stable/src/environments/environment.ts) with the **collection ID** (this is a number) not the _name_!
 - In the collection settings you need to add 3 rules:
   | |Label |Key   |Rule Type|Required|
   |-|------|------|---------|--------|
