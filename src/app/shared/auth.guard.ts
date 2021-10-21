@@ -9,7 +9,7 @@ import { AppwriteService } from './appwrite.service';
 export class AuthGuard implements CanActivate {
   constructor(
     private router: Router,
-    public authService: AppwriteService,
+    private authService: AppwriteService,
   ) {}
   canActivate(
     route: ActivatedRouteSnapshot,

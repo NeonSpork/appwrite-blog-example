@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppwriteService } from 'src/app/shared/appwrite.service';
-import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -16,8 +15,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private aws: AppwriteService,
-    private router: Router,
-    public auth: AuthService) {
+    private router: Router) {
     this.loginFormGroup = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
@@ -30,16 +28,25 @@ export class LoginComponent implements OnInit {
 
   handleLogin() {
     console.log("starting");
-    let valid = this.aws.authenticate(
+    this.aws.appwrite.account.createSession(
       this.loginFormGroup.get('email')?.value,
       this.loginFormGroup.get('password')?.value)
-    if (valid) {
-      this.loginSuccess = true;
-      this.router.navigate(['/new-post']);
-    }
-    else {
-      this.loginSuccess = false;
-      this.loginFormGroup.reset();
-    }
+      .then(
+        (response: any) => {
+          console.log("good response");
+          console.log(response);
+          this.aws.userAuthorized = response.current;
+          console.log(this.aws.userAuthorized);
+          this.loginSuccess = true;
+          this.router.navigate(['/new-post']);
+        }, (error) => {
+          console.log("error response");
+          console.log(error);
+          this.aws.userAuthorized = false;
+          console.log(this.aws.userAuthorized);
+          this.loginSuccess = false;
+          this.loginFormGroup.reset();
+        }
+      )
   }
 }

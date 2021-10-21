@@ -7,30 +7,23 @@ import { environment } from 'src/environments/environment';
 })
 export class AppwriteService {
   appwrite = new Appwrite();
-  userAuthorized: boolean;
+  userAuthorized = false;
 
   constructor() {
     this.appwrite
       .setEndpoint(environment.APPWRITE_ENDPOINT) // Appwrite Endpoint
       .setProject(environment.PROJECT_ID);
-    this.userAuthorized = false;
-  }
-
-  authenticate(email: string, password: string): boolean {
-    let payload: any = this.appwrite.account.createSession(email, password)
-      .then(
-        (response) => {
-          console.log(response);
-        }, (error) => {
-          console.log(error);
-        }
-      )
-    if (payload.current != undefined) {
-      this.userAuthorized = payload.current;
-    }
-    else {
+    this.appwrite.account.getSession('current').then(
+      (response: any) => {
+        console.log(response);
+        this.userAuthorized = response.current;
+      },
+      (error) => {
+        this.userAuthorized = false;
+      }
+    );
+    if (this.userAuthorized === undefined) {
       this.userAuthorized = false;
     }
-    return this.userAuthorized;
   }
 }

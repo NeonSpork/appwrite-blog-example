@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppwriteService } from 'src/app/shared/appwrite.service';
-import { AuthService } from 'src/app/shared/auth.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -14,8 +13,7 @@ export class NewPostComponent implements OnInit {
   postFormGroup: FormGroup;
   constructor(private formBuilder: FormBuilder,
     private aws: AppwriteService,
-    private router: Router,
-    public auth: AuthService) {
+    private router: Router) {
     this.postFormGroup = this.formBuilder.group({
       title: ['', [Validators.required]],
       author: ['', [Validators.required]],
