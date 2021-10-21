@@ -1,3 +1,4 @@
+import { convertUpdateArguments } from '@angular/compiler/src/compiler_util/expression_converter';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -30,17 +31,24 @@ export class NewPostComponent implements OnInit {
       let confirmation = window.confirm("Are you SURE you want to publish this post?");
       if (confirmation) {
         let currentUser = '';
+        let currentID = '';
         let currentAccount: any;
         this.aws.appwrite.account.get().then(
           (account) => {
             currentAccount = account;
+            console.log(currentAccount);
             currentUser = currentAccount.name;
+            currentID = currentAccount.$id;
+            console.log('user:'+currentID);
             this.aws.appwrite.database.createDocument(environment.COLLECTION_ID,
               {
                 title: this.postFormGroup.get('title')!.value,
                 body: this.postFormGroup.get('body')!.value,
                 author: currentUser
-              });
+              },
+              ['*'],
+              ['user:'+currentID, 'role:blogger', 'team:Bloggers']
+              );
             this.postFormGroup.reset();
           }
         );
