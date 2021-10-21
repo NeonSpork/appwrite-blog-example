@@ -6,14 +6,34 @@
     </button>
   </div>
 </div>
-<div *ngFor="let blog of blog_posts.documents | reverse">
+<div *ngIf="blog_posts.sum > 0 " else noPosts>
+  <div *ngFor="let blog of blog_posts.documents | reverse">
+    <mat-card>
+      <mat-card-title>
+        {{blog.title}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        Author: {{blog.author}}
+      </mat-card-subtitle>
+      <markdown>{{blog.body}}</markdown>
+    </mat-card>
+  </div>
+</div>
+<div id=noPosts>
   <mat-card>
     <mat-card-title>
-      {{blog.title}}
+      No blog posts yet!
     </mat-card-title>
     <mat-card-subtitle>
-      Author: {{blog.author}}
+      Let's fix that, shall we?
     </mat-card-subtitle>
-      <markdown>{{blog.body}}</markdown>
-  </mat-card>
+    <p>
+      Head on over to <a href="http://localhost/console" target="_blank">your appwrite console</a> and set up
+      your local appwrite project!
+    </p>
+    <p>
+      Then we can get to bloggin'
+      <mat-icon>chat</mat-icon>
+    </p>
+    </mat-card>
 </div>
