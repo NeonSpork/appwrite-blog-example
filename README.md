@@ -21,17 +21,18 @@ Follow the [installation instructions](https://appwrite.io/docs/installation) fo
 ### Create a project in Appwrite
 
 Once you've installed Appwrite, go ahead and head to the console at [http://localhost/console](http://localhost/console).  
+
 _Heads up: you'll need to create a user the first time you do this!_
 
-Once you're in, create a project and copy the project ID and replace `[YOUR_PROJECT_ID]` with your unique project ID (the _number_ in single quotes).  
-
-**NOTE! Important that you change the _name_ of the actual file from `.env-EXAMPLE` to just plain old `.env`, otherwise the app will _not_ be able to find your IDs!
+Once you're in, create a project and copy the project ID and replace `[YOUR_PROJECT_ID]` in [/src/environment/environment.ts](https://github.com/NeonSpork/appwrite-blog-example/blob/stable/src/environments/environment.ts) with your unique project ID (the _number_ in single quotes).  
 
 ### Create a user for yourself in the Appwrite project
 
 This user will be the "admin" and will have access to the page where you can create and manage blog posts.
 
-In the console page for your project go the the Users page and Add User for yourself.
+In the console page for your project go the the Users page and Add User for yourself.  
+
+_**Note!** If you forget the email and password you created you can reset/change them here!_
 
 ### Create a blogger role in the project
 
@@ -44,13 +45,13 @@ In the Bloggers team overview, add your user to the members.
 - Add a user name
 - Under roles _**remove**_ `owner` and _**add**_ `blogger`
 
-**NOTE! The role is important for later so don't forget.**
+_**NOTE! This role is important for later so don't forget.**_
 
 ### Create a "blog-post" document collection in the project
 
 - Head to the `Database` page in your project
 - Click `Add Collection` and call it "blog-posts" or something similar
-  - NOTE: You must update the `.env` setting `[YOUR_COLLECTION_ID]` with the **collection ID** (this is a number) not the _name_!
+  - NOTE: You must also update `[YOUR_COLLECTION_ID]` in [/src/environment/environment.ts](https://github.com/NeonSpork/appwrite-blog-example/blob/stable/src/environments/environment.ts) with the **collection ID** (this is a number) not the _name_!
 - In the collection settings you need to add 3 rules:
   | |Label |Key   |Rule Type|Required|
   |-|------|------|---------|--------|
