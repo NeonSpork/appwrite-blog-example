@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { IBlogPost } from 'src/app/interfaces';
 import { AppwriteService } from 'src/app/shared/appwrite.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit {
   }
 
   populate() {
-    this.aws.appwrite.database.listDocuments('6167ecc73d849')
+    this.aws.appwrite.database.listDocuments(environment.COLLECTION_ID)
       .then((response) => {
         this.blog_posts = JSON.parse(JSON.stringify(response));
         console.log("SUCCESS");
