@@ -38,12 +38,8 @@ export class HomeComponent implements OnInit {
     this.aws.appwrite.database.listDocuments(environment.COLLECTION_ID)
       .then((response) => {
         this.blog_posts = JSON.parse(JSON.stringify(response));
-        console.log("SUCCESS");
-        console.log(response);
       }, (error) => {
         this.blog_posts = JSON.parse(JSON.stringify(error));
-        console.log("ERROR");
-        console.log(error);
       });
   }
 
