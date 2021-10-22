@@ -30,19 +30,18 @@ export class NewPostComponent implements OnInit {
     if (this.aws.userAuthorized) {
       let confirmation = window.confirm("Are you SURE you want to publish this post?");
       if (confirmation) {
-        let currentAccount: any;
         this.aws.appwrite.account.get().then(
           (account) => {
-            currentAccount = account;
+            const { name, $id } = account as any;
             this.aws.appwrite.database.createDocument(environment.COLLECTION_ID,
               {
                 title: this.postFormGroup.get('title')!.value,
                 body: this.postFormGroup.get('body')!.value,
-                author: currentAccount.name
+                author: name
               },
               ['*'],
-              ['user:'+currentAccount.$id, 'role:blogger', 'team:Bloggers']
-              );
+              [`user:${$id}`, 'role:blogger', 'team:Bloggers']
+            );
             this.postFormGroup.reset();
           }
         );
